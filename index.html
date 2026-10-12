@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal Research Backup: information about a private research backup workflow using restic, rclone and Google Drive.">
+  <title>Personal Research Backup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">Personal Research Backup</a>
+    <nav aria-label="Main navigation"><a href="privacy.html">Privacy policy</a></nav>
+  </header>
+  <main id="main">
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A personal research utility · AmolAdhav</p>
+      <h1 id="title">Research stays private.<br>Recovery stays possible.</h1>
+      <p class="lead">Personal Research Backup is a personal workflow for preserving research files in the owner's Google Drive using restic and rclone.</p>
+      <p>This website explains the application and its use of Google account access. It does not perform backups, accept uploads or offer a public sign-in service.</p>
+      <a class="text-link" href="privacy.html">Read the privacy policy <span aria-hidden="true">→</span></a>
+    </section>
+    <section class="workflow" aria-labelledby="workflow-title">
+      <div><p class="eyebrow">How the workflow is designed</p><h2 id="workflow-title">Three steps, one private destination.</h2></div>
+      <ol class="steps">
+        <li><strong>Select local files</strong><p>The owner chooses research artifacts on their own computer. Credentials and public website files are kept separate from the backup selection.</p></li>
+        <li><strong>Encrypt with restic</strong><p>Restic encrypts backup contents and repository metadata locally before upload. The owner keeps the repository password separately for recovery.</p></li>
+        <li><strong>Transfer with rclone</strong><p>Rclone uses the owner's Google authorization to store the encrypted repository in Google Drive. Google can still observe account and service activity, including storage usage.</p></li>
+      </ol>
+    </section>
+    <section class="details" aria-labelledby="access-title">
+      <h2 id="access-title">Access with a specific purpose</h2>
+      <p>The application requests the Google Drive <code>drive.file</code> permission to create and manage its backup files, and any files the owner explicitly authorizes for the application. It does not request permission to read every file in the owner's Drive.</p>
+      <p>OAuth credentials and tokens are stored in the owner's protected local rclone configuration. They are never part of this public website.</p>
+      <aside class="notice" aria-label="Implementation status"><strong>Setup in progress.</strong> Nightly automation is planned. A completed backup, tested restore and active schedule have not yet been confirmed. This website is not evidence of backup protection.</aside>
+    </section>
+    <section class="details" aria-labelledby="owner-title">
+      <h2 id="owner-title">Owner and contact</h2>
+      <p>Maintained by <a href="https://github.com/AmolAdhav">AmolAdhav on GitHub</a> for personal use. Use the public profile for available contact options. Never send credentials, tokens or private research data through a public channel.</p>
+    </section>
+  </main>
+  <footer><span>Personal Research Backup</span><a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>
